@@ -1,17 +1,28 @@
-
-import { Login } from './components/Login'
-import {ProfileUser} from './components/Profile'
+import { useEffect, useState } from 'react'
+import { Login } from './pages/Login'
+import { Navbar } from './components/Navbar'
 import { useAuth0 } from '@auth0/auth0-react'
-import { LogoutUser } from "./components/Logout"
+import { Products } from './components/Products'
+import { Home } from './pages/Home'
+import { Routes, Route, useNavigate } from 'react-router-dom'
+import { Footer } from './components/Footer'
 
 function App() {
 
+  const [loged, setLoged]= useState(false)
   const {isAuthenticated}= useAuth0()
-console.log(isAuthenticated)
-  return (
+  const navigate = useNavigate()
+  
+
+  return ( 
     <>
-      {isAuthenticated ?<LogoutUser></LogoutUser> :<Login></Login> }
-      <ProfileUser></ProfileUser>
+      {isAuthenticated ? <Navbar></Navbar>  : ""}
+    
+  <Routes> 
+    <Route path='/' element={<Home></Home>}></Route>
+    <Route path='/login' element={<Login ></Login>}></Route>
+  </Routes>
+  {isAuthenticated ? <Footer></Footer>  : ""}
     </>
   )
 }

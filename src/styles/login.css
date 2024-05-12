@@ -8,10 +8,11 @@
    
 }
 .login button{
-    background-color: blue;
-    width: 100px;
-    height: 30px;
+    background-color: rgb(0, 94, 255);
+    width: 90px;
+    height: 47px;
     border-radius: 10%;
     color: white;
     border: 1px solid white;
+font-weight: bold;
 }
