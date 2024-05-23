@@ -4,13 +4,14 @@ import { useAuth0 } from '@auth0/auth0-react'
 import { Login } from "./Login"
 import { Porpouse } from "../components/Porpouse"
 import { AboutMe } from "../components/AboutMe"
+import { TypesGuides } from "../components/TypesGuides"
 import { Information } from "../components/Information"
 
 
 export function Home(params) {
     const { isAuthenticated, user, isLoading } = useAuth0()
     const [loadingUser, setLoadingUser] = useState()
-    const navigate = useNavigate()
+    
 
 
 
@@ -25,6 +26,7 @@ export function Home(params) {
         <AboutMe></AboutMe>
         <Porpouse></Porpouse>
         <Information></Information>
+        <TypesGuides></TypesGuides>
         </>
 
     )

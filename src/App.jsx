@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react'
 import { Login } from './pages/Login'
 import { Navbar } from './components/Navbar'
 import { useAuth0 } from '@auth0/auth0-react'
-import { Products } from './components/Products'
 import { Home } from './pages/Home'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import { Footer } from './components/Footer'
+import { GuidesFrontend } from './pages/GuidesFrontend'
+import { GuidesBackend } from './pages/GuidesBackend'
 
 function App() {
 
@@ -21,6 +22,9 @@ function App() {
   <Routes> 
     <Route path='/' element={<Home></Home>}></Route>
     <Route path='/login' element={<Login ></Login>}></Route>
+    <Route path='/guias/frontend' element={<GuidesFrontend ></GuidesFrontend>}></Route>
+    <Route path='/guias/backend' element={<GuidesBackend ></GuidesBackend>}></Route>
+
   </Routes>
   {isAuthenticated ? <Footer></Footer>  : ""}
     </>
