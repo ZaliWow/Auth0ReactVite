@@ -7,6 +7,8 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 import { Footer } from './components/Footer'
 import { GuidesFrontend } from './pages/GuidesFrontend'
 import { GuidesBackend } from './pages/GuidesBackend'
+import { Streamers } from './pages/Streamers'
+import { FiltersStreamerProvider } from './context/filterStreamer'
 
 function App() {
 
@@ -16,7 +18,7 @@ function App() {
   
 
   return ( 
-    <>
+    <FiltersStreamerProvider>
       {isAuthenticated ? <Navbar></Navbar>  : ""}
     
   <Routes> 
@@ -24,10 +26,11 @@ function App() {
     <Route path='/login' element={<Login ></Login>}></Route>
     <Route path='/guias/frontend' element={<GuidesFrontend ></GuidesFrontend>}></Route>
     <Route path='/guias/backend' element={<GuidesBackend ></GuidesBackend>}></Route>
+    <Route path='/creadores' element={<Streamers />}></Route>
 
   </Routes>
   {isAuthenticated ? <Footer></Footer>  : ""}
-    </>
+    </FiltersStreamerProvider>
   )
 }
 

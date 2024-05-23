@@ -43,6 +43,12 @@ export function Navbar() {
     navigate("/");
     setIsOpen(false); // Cerramos el menú al cambiar de página
   };
+  const handleStreamers = () => {
+    navigate("/creadores");
+    setIsOpen(false); // Cerramos el menú al cambiar de página
+  }
+
+
 
   return (
     <nav className="bg-pink-50 p-10">
@@ -53,7 +59,7 @@ export function Navbar() {
           </a>
         </div>
         <div className="hidden md:block">
-          <a onClick={handleHome} className="text-lg text-gray-800 hover:text-gray-900 px-3 py-2">
+          <a onClick={handleHome} className=" text-gray-800 hover:text-gray-900 px-3 py-2">
             Inicio
           </a>
           <a onClick={handleGuides} className="text-gray-800 hover:text-gray-900 px-3 py-2">
@@ -77,7 +83,7 @@ export function Navbar() {
           }
 
           <a href="#" className="text-gray-800 hover:text-gray-900 px-3 py-2">Articulos</a>
-          <a href="#" className="text-gray-800 hover:text-gray-900 px-3 py-2">Creadores</a>
+          <a href="#" onClick={handleStreamers} className="text-gray-800 hover:text-gray-900 px-3 py-2">Creadores</a>
           <LogoutUser></LogoutUser>
         </div>
         <div className="md:hidden">
@@ -108,8 +114,7 @@ export function Navbar() {
                 <a onClick={handleResourcesFrontend} className="text-gray-800 hover:text-gray-900 block px-10 py-2">Recursos Frontend</a>
               </div>
             )}
-            <a href="#" className="text-gray-800 hover:text-gray-900 block px-3 py-2">Articulos</a>
-            <a href="#" className="text-gray-800 hover:text-gray-900 block px-3 py-2">Creadores</a>
+            <a href="#" onClick={handleStreamers}  className="text-gray-800 hover:text-gray-900 block px-3 py-2">Creadores</a>
           </div>
         </div>
       )}

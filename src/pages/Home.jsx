@@ -26,7 +26,7 @@ export function Home(params) {
         <AboutMe></AboutMe>
         <Porpouse></Porpouse>
         <Information></Information>
-        <TypesGuides></TypesGuides>
+    
         </>
 
     )
