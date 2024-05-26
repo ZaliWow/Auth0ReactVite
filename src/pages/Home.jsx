@@ -1,12 +1,9 @@
-import { useEffect, useState } from "react"
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { useState } from "react"
 import { useAuth0 } from '@auth0/auth0-react'
 import { Login } from "./Login"
-import { Porpouse } from "../components/Porpouse"
-import { AboutMe } from "../components/AboutMe"
-import { TypesGuides } from "../components/TypesGuides"
-import { Information } from "../components/Information"
-
+import { AboutMe } from "../components/componentsHome/AboutMe"
+import { Information } from "../components/componentsHome/Information"
+import {Porpouse} from "../components/componentsHome/Porpouse"
 
 export function Home(params) {
     const { isAuthenticated, user, isLoading } = useAuth0()
