@@ -8,7 +8,7 @@ export function RecommendedGuides({itemsGuides}){
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {
                 itemsGuides.map((item) => (
-          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+          <div key={item.title} className="bg-white shadow-lg rounded-lg overflow-hidden">
                           <img src={item.photo} alt="Guía 1" className="w-full h-48 object-cover" />
                           <div className="p-6">
                             <h3 className="text-xl font-semibold mb-2">{item.title}</h3>

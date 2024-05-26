@@ -1,7 +1,7 @@
 import { filtersStreamerContext } from "../context/filterStreamer";
 import { useContext } from "react";
 
-export function useFiltersStreamer(){
+export function useFiltersStreamer(){ 
 
     const {filtersStreamersBody, setFiltersStreamersBody} = useContext(filtersStreamerContext);
 

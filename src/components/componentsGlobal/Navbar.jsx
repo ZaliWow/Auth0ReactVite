@@ -67,23 +67,29 @@ export function Navbar() {
           </a>
           {showGuides && (
             <div className="absolute bg-white py-1 mt-2 rounded-md shadow-lg">
-              <a onClick={handleBackend} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Guias Backend</a>
-              <a onClick={handleFrontend} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Guias Frontend</a>
+              <a onClick={handleBackend} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                Guias Backend</a>
+              <a onClick={handleFrontend} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                Guias Frontend</a>
             </div>
           )}
-          <a onClick={handleResources} className="text-base text-gray-800 hover:text-gray-900 px-3 py-2">Recursos</a>
+          <a onClick={handleResources} className="text-base text-gray-800 hover:text-gray-900 px-3 py-2">
+            Recursos</a>
           {
             showResources && (
               <div className="absolute bg-white py-1 mt-2 rounded-md shadow-lg">
-                <a onClick={handleResourcesBackend} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Recursos Backend</a>
-                <a onClick={handleFrontend} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Recursos Frontend</a>
+                <a onClick={handleResourcesBackend} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                  Recursos Backend</a>
+                <a onClick={handleResourcesFrontend} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                  Recursos Frontend</a>
               </div>
             )
 
           }
 
-          <a href="#" className="text-gray-800 hover:text-gray-900 px-3 py-2">Articulos</a>
-          <a href="#" onClick={handleStreamers} className="text-gray-800 hover:text-gray-900 px-3 py-2">Creadores</a>
+          
+          <a onClick={handleStreamers} className="text-gray-800 hover:text-gray-900 px-3 py-2">
+            Creadores</a>
           <LogoutUser></LogoutUser>
         </div>
         <div className="md:hidden">
@@ -99,22 +105,30 @@ export function Navbar() {
       {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <a onClick={handleHome} className="text-gray-800 hover:text-gray-900 block px-3 py-2">Inicio</a>
-            <a onClick={handleGuides} className="text-gray-800 hover:text-gray-900 block px-3 py-2">Guías</a>
+            <a onClick={handleHome} className="text-gray-800 hover:text-gray-900 block px-3 py-2">
+              Inicio</a>
+            <a onClick={handleGuides} className="text-gray-800 hover:text-gray-900 block px-3 py-2">
+              Guías</a>
             {showGuides && (
               <div>
-                <a onClick={handleBackend} className="text-gray-800 hover:text-gray-900 block px-10 py-2"> Backend</a>
-                <a onClick={handleFrontend} className="text-gray-800 hover:text-gray-900 block px-10 py-2"> Frontend</a>
+                <a onClick={handleBackend} className="text-gray-800 hover:text-gray-900 block px-10 py-2"> 
+                Backend</a>
+                <a onClick={handleFrontend} className="text-gray-800 hover:text-gray-900 block px-10 py-2"> 
+                Frontend</a>
               </div>
             )}
-            <a onClick={handleResources} className="text-gray-800 hover:text-gray-900 block px-3 py-2">Recursos</a>
+            <a onClick={handleResources} className="text-gray-800 hover:text-gray-900 block px-3 py-2">
+              Recursos</a>
             {showResources && (
               <div>
-                <a onClick={handleResourcesBackend} className="text-gray-800 hover:text-gray-900 block px-10 py-2">Recursos Backend</a>
-                <a onClick={handleResourcesFrontend} className="text-gray-800 hover:text-gray-900 block px-10 py-2">Recursos Frontend</a>
+                <a onClick={handleResourcesBackend} className="text-gray-800 hover:text-gray-900 block px-10 py-2">
+                  Recursos Backend</a>
+                <a onClick={handleResourcesFrontend} className="text-gray-800 hover:text-gray-900 block px-10 py-2">
+                  Recursos Frontend</a>
               </div>
             )}
-            <a href="#" onClick={handleStreamers}  className="text-gray-800 hover:text-gray-900 block px-3 py-2">Creadores</a>
+            <a  onClick={handleStreamers}  className="text-gray-800 hover:text-gray-900 block px-3 py-2">
+              Creadores</a>
           </div>
         </div>
       )}

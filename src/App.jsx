@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react'
 import { Login } from './pages/Login'
-import { Navbar } from './components/Navbar'
+import { Navbar } from './components/componentsGlobal/Navbar'
 import { useAuth0 } from '@auth0/auth0-react'
 import { Home } from './pages/Home'
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import { Footer } from './components/Footer'
+import {Footer} from './components/componentsGlobal/Footer'
 import { GuidesFrontend } from './pages/GuidesFrontend'
 import { GuidesBackend } from './pages/GuidesBackend'
 import { Streamers } from './pages/Streamers'
 import { FiltersStreamerProvider } from './context/filterStreamer'
+import { FilterGuidesProvider } from './context/filterGuides'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
 
   return ( 
     <FiltersStreamerProvider>
+      <FilterGuidesProvider>
       {isAuthenticated ? <Navbar></Navbar>  : ""}
     
   <Routes> 
@@ -30,6 +32,7 @@ function App() {
 
   </Routes>
   {isAuthenticated ? <Footer></Footer>  : ""}
+  </FilterGuidesProvider>
     </FiltersStreamerProvider>
   )
 }
