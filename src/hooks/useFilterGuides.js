@@ -10,7 +10,7 @@ export function useFilterGuides() {
             const levelAll = filterGuidesBody.level === "all" || filterGuidesBody.level === "";
             const languageAll = filterGuidesBody.lenguage === "all" || filterGuidesBody.lenguage === "";
         
-            if (levelAll && languageAll) {
+            if (levelAll && languageAll) { 
               return true; // Mostrar todos los streamers
          
         } else if (levelAll && !languageAll) {
