@@ -16,3 +16,6 @@
     border: 1px solid white;
 font-weight: bold;
 }
+select option:hover {
+    background-color: #F472B6; /* Color rosado */
+  }
