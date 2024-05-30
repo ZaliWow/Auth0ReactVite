@@ -51,7 +51,7 @@ export function Navbar() {
 
 
   return (
-    <nav className="bg-pink-50 p-10">
+    <nav className="bg-[rgba(255,241,242,0.8)] z-50 top-0 left-0 fixed px-4  w-full py-10">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <a href="#" className="text-gray-800 text-xl font-bold">
@@ -59,28 +59,28 @@ export function Navbar() {
           </a>
         </div>
         <div className="hidden md:block">
-          <a onClick={handleHome} className=" text-gray-800 hover:text-gray-900 px-3 py-2">
+          <a onClick={handleHome} className=" font-bold text-gray-800 hover:text-gray-900 px-3 py-2">
             Inicio
           </a>
-          <a onClick={handleGuides} className="text-gray-800 hover:text-gray-900 px-3 py-2">
+          <a onClick={handleGuides} className="font-bold text-gray-800 hover:text-gray-900 px-3 py-2">
             Guías
           </a>
           {showGuides && (
             <div className="absolute bg-pink-50 py-1 mt-2 rounded-md shadow-lg">
-              <a onClick={handleBackend} className="bg-pink-50 block px-4 py-2 text-gray-800 hover:bg-gray-100">
+              <a onClick={handleBackend} className=" font-bold bg-pink-50 block px-4 py-2 text-gray-800 hover:bg-gray-100">
                 Guias Backend</a>
-              <a onClick={handleFrontend} className="bg-pink-50 block px-4 py-2 text-gray-800 hover:bg-gray-100">
+              <a onClick={handleFrontend} className="font-bold bg-pink-50 block px-4 py-2 text-gray-800 hover:bg-gray-100">
                 Guias Frontend</a>
             </div>
           )}
-          <a onClick={handleResources} className="text-base text-gray-800 hover:text-gray-900 px-3 py-2">
+          <a onClick={handleResources} className="font-bold text-base text-gray-800 hover:text-gray-900 px-3 py-2">
             Tecnologías</a>
           {
             showResources && (
               <div className="absolute bg-pink-50 py-1 mt-2 rounded-md shadow-lg">
-                <a onClick={handleResourcesBackend} className=" bg-pink-50 block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                <a onClick={handleResourcesBackend} className="font-bold bg-pink-50 block px-4 py-2 text-gray-800 hover:bg-gray-100">
                   Tecnologías Backend</a>
-                <a onClick={handleResourcesFrontend} className=" bg-pink-50 block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                <a onClick={handleResourcesFrontend} className="font-bold bg-pink-50 block px-4 py-2 text-gray-800 hover:bg-gray-100">
                   Tecnologías Frontend</a>
               </div>
             )
@@ -88,7 +88,7 @@ export function Navbar() {
           }
 
           
-          <a onClick={handleStreamers} className="text-gray-800 hover:text-gray-900 px-3 py-2">
+          <a onClick={handleStreamers} className=" font-bold text-gray-800 hover:text-gray-900 px-3 py-2">
             Creadores</a>
           <LogoutUser></LogoutUser>
         </div>
