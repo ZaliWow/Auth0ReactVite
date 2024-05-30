@@ -1,7 +1,7 @@
 export function Footer(params) {
     return(
-<footer className=" bg-pink-500 text-white py-8">
-  <div className="max-w-6xl mx-auto px-4">
+<footer className="  bg-pink-500 text-white mt-8">
+  <div className="max-w-6xl mx-auto p-8">
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <div>
         <h3 className="text-xl font-bold mb-4">Enlaces Rápidos</h3>

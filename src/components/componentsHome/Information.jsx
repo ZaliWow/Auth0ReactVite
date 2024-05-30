@@ -1,23 +1,36 @@
+import { useNavigate } from "react-router-dom";
 export function Information(params) {
 const items = [{
     title:"Guías Prácticas",
     description:"Puedes acceder a un sin fin de guías que he estado recopilando a través de mis investigaciones",
-    callaction:"Ver guías"
+    callaction:"Ver guías",
+    navigate:"guias"
 },{
     title:"Artículos Profundos",
     description:"Sumérgete en publicaciones profundas que exploran una amplia gama de temas y ofrecen análisis detallados y perspectivas únicas.",
-    callaction:"Ver artículos"
+    callaction:"Ver artículos",
+    navigate: "recursos"
 },{
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:3595286310.
     title:"Recursos Útiles",
     description:"Gran cantidad de recursos que te ayudarán a la hora de desarrollar.",
-    callaction:"Ver recursos"
+    callaction:"Ver recursos",
+    navigate: "recursos"
 }
 ,{
     title:"Creadores de contenido",
     description:"Los mejores creadores de contenido para aprender desarrollo web.",
-    callaction:"Ver creadores"
+    callaction:"Ver creadores",
+    navigate: "creadores"
 }
 ]
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:325156225.
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:1446681874.
+const navigate = useNavigate();
+const handleNavigate = (url) => {
+    navigate(`/${url}`)
+  };
+
     return(
         <div className=" py-12">
   <div className="w-full mx-auto px-4">
@@ -30,7 +43,7 @@ const items = [{
             <h3 className="text-2xl font-semibold text-gray-800 mb-4">{item.title}</h3>
             <p className="text-gray-600 text-center">{item.description}</p>
             <div className="text-center mt-8">
-         <a href="#" className="bg-pink-500  hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out inline-block">{item.callaction}</a>
+         <a onClick={() => handleNavigate(item.navigate)}className="bg-pink-500  hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out inline-block">{item.callaction}</a>
         </div>
           </div>
           )

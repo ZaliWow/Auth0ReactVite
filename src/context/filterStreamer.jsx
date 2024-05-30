@@ -7,11 +7,15 @@ export function FiltersStreamerProvider({children}) {
         category:"all",
         lenguage:"all",
     })
+    const [termStreamerSearch, setTermStreamerSearch] = useState("")
     return (
         <filtersStreamerContext.Provider 
         value={
             {filtersStreamersBody, 
-            setFiltersStreamersBody}}>
+            setFiltersStreamersBody,
+            termStreamerSearch,
+            setTermStreamerSearch
+            }}>
             {children}
         </filtersStreamerContext.Provider>
     )

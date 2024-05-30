@@ -1,6 +1,5 @@
 import { useAuth0 } from '@auth0/auth0-react'
 import { Login } from "./Login"
-import { RecommendedGuides } from "../components/componentsGuides/RecommendedGuides"
 import { CardsGuides } from '../components/componentsGuides/CardsGuides'
 import { useFilterGuides } from '../hooks/useFilterGuides'
 
@@ -78,6 +77,46 @@ export function GuidesBackend(params) {
         lenguage: "sql",
         level:"ez",
         link:"https://www.google.com"
+    },
+    {
+        title: "Titulo guia backend 10",
+        photo: "",
+        description: "esta es la guia 10",
+        lenguage: "javascript",
+        level:"hard",
+        link:"https://www.google.com"
+    },
+    {
+        title: "Titulo guia backedn 11",
+        photo: "",
+        description: "esta es la guia 11",
+        lenguage: "python",
+        level:"hard",
+        link:"https://www.google.com"
+    },
+    {
+        title: "Titulo guia backend 12",
+        photo: "",
+        description: "esta es la guia 12",
+        lenguage: "php",
+        level:"hard",
+        link:"https://www.google.com"
+    },
+    {
+        title: "Titulo guia backend 13",
+        photo: "",
+        description: "esta es la guia 13",
+        lenguage: "javascript",
+        level:"hard",
+        link:"https://www.google.com"
+    },
+    {
+        title: "Titulo guia backedn 14",
+        photo: "",
+        description: "esta es la guia 14",
+        lenguage: "python",
+        level:"hard",
+        link:"https://www.google.com"
     }
 
 
@@ -94,8 +133,11 @@ export function GuidesBackend(params) {
 
     return (
         <>
-        
-            <CardsGuides itemsGuides={filteredGuides}></CardsGuides>
+        <div>
+        <h1 className="text-center text-2xl font-bold mb-4 mt-16">Guías Backend</h1>
+        <CardsGuides itemsGuides={filteredGuides}></CardsGuides>
+   </div>
+            
         </>
 
     )

@@ -11,10 +11,12 @@ export function Streamers(params) {
   if (isAuthenticated === false) return (<Login></Login>)
    
     return(
-        <> 
-        
-          <FilterStreamer ></FilterStreamer>
-        <CartsStreamers ></CartsStreamers></>
+       
+        <div className="flex flex-col md:flex-row min-h-screen">
+ <FilterStreamer ></FilterStreamer>
+        <CartsStreamers ></CartsStreamers>
+        </div>
+         
      
         
     )

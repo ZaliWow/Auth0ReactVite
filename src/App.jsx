@@ -10,6 +10,10 @@ import { GuidesBackend } from './pages/GuidesBackend'
 import { Streamers } from './pages/Streamers'
 import { FiltersStreamerProvider } from './context/filterStreamer'
 import { FilterGuidesProvider } from './context/filterGuides'
+import { ResourcesBackend } from './pages/ResourcesBackend'
+import { ResourcesFrontend } from './pages/ResourcesFrontend'
+import { Prueba } from './components/prueba'
+
 
 function App() {
 
@@ -28,10 +32,12 @@ function App() {
     <Route path='/login' element={<Login ></Login>}></Route>
     <Route path='/guias/frontend' element={<GuidesFrontend ></GuidesFrontend>}></Route>
     <Route path='/guias/backend' element={<GuidesBackend ></GuidesBackend>}></Route>
+    <Route path='/recursos/backend' element={<ResourcesBackend ></ResourcesBackend>}></Route>
+    <Route path='/recursos/frontend' element={<ResourcesFrontend ></ResourcesFrontend>}></Route>
     <Route path='/creadores' element={<Streamers />}></Route>
-
   </Routes>
-  {isAuthenticated ? <Footer></Footer>  : ""}
+<Prueba></Prueba>
+  {isAuthenticated ? <Footer></Footer>  : "a"}
   </FilterGuidesProvider>
     </FiltersStreamerProvider>
   )

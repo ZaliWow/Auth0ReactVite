@@ -1,14 +1,61 @@
 import { useState } from "react"
 import { useFiltersStreamer } from "../../hooks/useFilterStreamer"
+  import Select from 'react-select';
+
 export function FilterStreamer() {
-
-const {setFiltersStreamersBody, filtersStreamersBody} = useFiltersStreamer();
-
+  
+const {setFiltersStreamersBody, filtersStreamersBody, setTermStreamerSearch} = useFiltersStreamer();
+  const customStyles = {
+        control: (provided) => ({
+          ...provided,
+          width: '100%',
+          border: '1px solid #d1d5db', // border-gray-300
+          borderRadius: '0.375rem', // rounded-md
+          boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+          '&:hover': {
+            borderColor: '#ec4899', // focus:border-pink-500
+          },
+          zIndex: 10, // Añadir z-index al control
+        }),
+        menu: (provided) => ({
+          ...provided,
+          zIndex: 20, // Añadir z-index al menú
+          position: 'absolute', // Asegurar que el menú se posiciona fuera del flujo del documento
+        }),
+        menuPortal: (provided) => ({
+          ...provided,
+          zIndex: 30, // Asegurar que el menú portal tiene un z-index alto
+        }),
+        option: (provided, state) => ({
+          ...provided,
+          backgroundColor: state.isFocused ? '#f472b6' : '#fff', // hover:bg-pink-500
+          color: state.isFocused ? '#fff' : '#000',
+          '&:hover': {
+            backgroundColor: '#f472b6',
+            color: '#fff',
+          },
+        }),
+      };
+      const optionsFByCategory = [
+        { value: 'all', label: 'Todo' },
+        { value: 'backend', label: 'Backend' },
+        { value: 'frontend', label: 'Frontend' },
+       
+    ]
+    const optionsTecnology = [
+        { value: 'all', label: 'Todo' },
+        { value: 'javascript', label: 'Javascript' },
+        { value: 'python', label: 'Python' },
+        { value: 'php', label: 'PHP' },
+        { value: 'java', label: 'Java' },
+        { value: 'ruby', label: 'Ruby' },
+        { value: 'c', label: 'C' },
+    ];
     const handleFilterCategory = (e) => {
        
         setFiltersStreamersBody(prevState => ({
             ...prevState,
-            category:e.target.value,
+            category:e.value,
         }))
         
        
@@ -16,38 +63,48 @@ const {setFiltersStreamersBody, filtersStreamersBody} = useFiltersStreamer();
     const handleFilterLenguage= (e) => {
         setFiltersStreamersBody(prevState => ({
             ...prevState,
-            lenguage:e.target.value,
+            lenguage:e.value,
         }))
     }
-
+    const handleFilterSearch= (e) => {
+        setTermStreamerSearch(e.target.value)
+        
+    }
     return(
-        <section className="flex flex-col items-center py-8 w-full">   
-        <h1 className="text-2xl">Creadores de contenido</h1>
-        <div className="flex flex-col md:flex-row w-full bg-red-500"> 
-            <div className="flex  justify-center md:w-1/4  px-8 bg-blue-50 md:flex-col  ">
+        <section className="flex flex-col items-center py-8 md:w-1/3 w-screen">   
+        <h1 className="text-2xl font-bold">Creadores de contenido</h1>
+        
+      
+        <input 
+            id="username" 
+            type="text" 
+            onChange={handleFilterSearch}
+            placeholder="Ingresa tu nombre de usuario"
+            className="appearance-none block  bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-blue-500 shadow-sm"
+        />
+
+            <div className="flex  justify-center md:w-full  px-8  md:flex-col  ">
                
                 <div className="md:py-8  px-8">
-                     <select onChange={handleFilterCategory} className="block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 " name="category" id="categoryStreamer">
-                    <option value="all">Todo</option> 
-                    <option value="backend">Backend</option>
-                    <option value="frontend">Frontend</option>
-                 
-                </select>
+                <Select
+                                        options={optionsFByCategory}
+                                        onChange={handleFilterCategory}
+                                        styles={customStyles}
+                                        placeholder="Dificultad"
+                                    />
                 </div >
 {/* Suggested code may be subject to a license. Learn more: ~LicenseLog:3671192549. */}
                 <div className="md:py-8 px-8">
-                <select  onChange= {handleFilterLenguage} className="block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 " name="lenguage" id="lenguageStreaner">
-                    <option value="all">Todo</option>
-                    <option value="javascript">Javascript</option>
-                    <option value="python">Python</option>
-                    <option value="react">React</option>
-                  
-                </select>
+                <Select
+                                        options={optionsTecnology}
+                                        onChange={handleFilterLenguage}
+                                        styles={customStyles}
+                                        placeholder="Tecnología" />
                 
                 </div>
             </div>
-            <div className="md:w-3/4  px-8 bg-gray-500"> soy div 2</div>
-        </div>
+           
+   
         
         
         </section>

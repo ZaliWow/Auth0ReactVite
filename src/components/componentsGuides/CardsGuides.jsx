@@ -1,7 +1,9 @@
 import { useFilterGuides } from "../../hooks/useFilterGuides"
 import Select from 'react-select';
+import { useState } from "react";
 
 export function CardsGuides({ itemsGuides }) {
+
     const { setFilterGuidesBody, filterGuidesBody } = useFilterGuides()
     const handleFilterGuidesLenguage = (e) => {
         console.log(e.value)
@@ -71,11 +73,26 @@ export function CardsGuides({ itemsGuides }) {
           },
         }),
       };
+//pagination 
+const itemsPerPage = 10
+const [currentPage, setCurrentPage]=useState(1)
+const indexOfLastItem = currentPage * itemsPerPage;
+const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+const totalPages = Math.ceil(itemsGuides.length / itemsPerPage);
+
+const handlePrevious = () => {
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+};
+
+const handleNext = () => {
+    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+};
+const itemsList= itemsGuides.slice( indexOfFirstItem, indexOfLastItem)
+
     return (
         <section className="w-full h-fill my-20 py-4   flex items-center justify-center">
 
             <div className="container mx-auto px-4">
-                <h1 className="text-2xl font-bold mb-4">Lista de guías</h1>
                 <div className="overflow-x-auto">
                     <table className="min-w-full bg-white border min-h-80 border-gray-300">
                         <thead>
@@ -103,12 +120,12 @@ export function CardsGuides({ itemsGuides }) {
                             </tr>
                         </thead>
                         <tbody className="text-gray-600 text-sm font-light">
-                            {itemsGuides.length === 0 ? (
+                            {itemsList.length === 0 ? (
                                 <tr>
                                     <td colSpan="4" className="text-center py-24">No hay datos</td>
                                 </tr>
                             ) : (
-                                itemsGuides.map(item => (
+                                itemsList.map(item => (
                                     <tr key={item.id} className="border-b border-gray-300 hover:bg-gray-100 py-24 ">
                                         <td className="py-3 px-6 text-left"> <a className="text-pink-500 hover:text-pink-700 underline" href={item.link} target="_blank">{item.title}</a> </td>
                                         <td className="py-3 px-6 text-left">{item.level}</td>
@@ -119,6 +136,25 @@ export function CardsGuides({ itemsGuides }) {
                             )}
                         </tbody>
                     </table>
+                    <div className="flex justify-between mt-4">
+                        <button
+                            onClick={handlePrevious}
+                            disabled={currentPage === 1}
+                            className="px-4 py-2 bg-gray-300 text-gray-700 rounded disabled:opacity-50"
+                        >
+                            Anterior
+                        </button>
+                        <span className="px-4 py-2">
+                            Página {currentPage} de {totalPages}
+                        </span>
+                        <button
+                            onClick={handleNext}
+                            disabled={currentPage === totalPages}
+                            className="px-4 py-2 bg-gray-300 text-gray-700 rounded disabled:opacity-50"
+                        >
+                            Siguiente
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
