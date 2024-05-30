@@ -80,7 +80,7 @@ export function CartsStreamers() {
     if (filteredStreamers.length > 0) return (
         <section className=" w-full justify-center flex flex-wrap">
 
-<h1>estas viendo busquedas por filtro</h1>
+
             {
                 filteredStreamers.map(streamer => {
                     return (
