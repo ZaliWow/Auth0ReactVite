@@ -12,14 +12,11 @@ import { FiltersStreamerProvider } from './context/filterStreamer'
 import { FilterGuidesProvider } from './context/filterGuides'
 import { ResourcesBackend } from './pages/ResourcesBackend'
 import { ResourcesFrontend } from './pages/ResourcesFrontend'
-import { Prueba } from './components/prueba'
 
 
 function App() {
 
-  const [loged, setLoged]= useState(false)
   const {isAuthenticated}= useAuth0()
-  const navigate = useNavigate()
   
 
   return ( 
@@ -36,7 +33,6 @@ function App() {
     <Route path='/recursos/frontend' element={<ResourcesFrontend ></ResourcesFrontend>}></Route>
     <Route path='/creadores' element={<Streamers />}></Route>
   </Routes>
-<Prueba></Prueba>
   {isAuthenticated ? <Footer></Footer>  : "a"}
   </FilterGuidesProvider>
     </FiltersStreamerProvider>

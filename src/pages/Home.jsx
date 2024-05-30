@@ -4,6 +4,7 @@ import { Login } from "./Login"
 import { AboutMe } from "../components/componentsHome/AboutMe"
 import { Information } from "../components/componentsHome/Information"
 import {Porpouse} from "../components/componentsHome/Porpouse"
+import { HeroHome } from "../components/componentsHome/HeroHome"
 
 export function Home(params) {
     const { isAuthenticated, user, isLoading } = useAuth0()
@@ -19,7 +20,7 @@ export function Home(params) {
 
     return (
         <>
-        
+        <HeroHome></HeroHome>
         <AboutMe></AboutMe>
         <Porpouse></Porpouse>
         <Information></Information>

@@ -9,6 +9,9 @@ colors:{
   "dev-default": '#F56565',
   "dev-dark": '#C53030',
   "dev-darkest": '#742A2A',
+},
+backgroundImage:{
+  'HeroHome':'url(public/images/HeroHome.webp)'
 }
 
     },
