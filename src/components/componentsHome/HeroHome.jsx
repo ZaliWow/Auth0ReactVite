@@ -29,7 +29,7 @@ export function HeroHome(params) {
           </div>
           <div className="md:block md:w-1/2 py-4" >
             <img src="/public/images/DESARROLLADOR BLUE.webp" alt="" />
-          </div>
+          </div> 
         </div>
         <div className="flex w-full justify-around py-4">
           <div className="w-8 h-8">
