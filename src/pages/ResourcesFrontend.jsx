@@ -105,7 +105,7 @@ const resourcesFrontend = [
 ]
 
     return(
-        <div>
+        <div className='pt-16'>
              <h1 className="text-center text-2xl font-bold mb-4 mt-16">Tecnologías frontend</h1>
         <Resources resources={resourcesFrontend}></Resources>
         </div>

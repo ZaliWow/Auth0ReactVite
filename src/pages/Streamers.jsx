@@ -12,7 +12,7 @@ export function Streamers(params) {
    
     return(
        
-        <div className="flex flex-col md:flex-row min-h-screen">
+        <div className="flex flex-col md:flex-row min-h-screen pt-24">
  <FilterStreamer ></FilterStreamer>
         <CartsStreamers ></CartsStreamers>
         </div>
