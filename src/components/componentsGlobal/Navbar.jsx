@@ -111,9 +111,9 @@ export function Navbar() {
               Guías</a>
             {showGuides && (
               <div>
-                <a onClick={handleBackend} className="bg-pink-50 text-gray-800 hover:text-gray-900 block px-10 py-2"> 
+                <a onClick={handleBackend} className=" text-gray-800 hover:text-gray-900 block px-10 py-2"> 
                 Backend</a>
-                <a onClick={handleFrontend} className="bg-pink-50 text-gray-800 hover:text-gray-900 block px-10 py-2"> 
+                <a onClick={handleFrontend} className=" text-gray-800 hover:text-gray-900 block px-10 py-2"> 
                 Frontend</a>
               </div>
             )}
@@ -121,14 +121,16 @@ export function Navbar() {
               Tecnologías</a>
             {showResources && (
               <div>
-                <a onClick={handleResourcesBackend} className=" bg-pink-50 text-gray-800 hover:text-gray-900 block px-10 py-2">
+                <a onClick={handleResourcesBackend} className="  text-gray-800 hover:text-gray-900 block px-10 py-2">
                   Tecnologías Backend</a>
-                <a onClick={handleResourcesFrontend} className="bg-pink-50 text-gray-800 hover:text-gray-900 block px-10 py-2">
+                <a onClick={handleResourcesFrontend} className=" text-gray-800 hover:text-gray-900 block px-10 py-2">
                   Tecnologías Frontend</a>
               </div>
             )}
             <a  onClick={handleStreamers}  className="text-gray-800 hover:text-gray-900 block px-3 py-2">
               Creadores</a>
+              <div className="flex justify-end"> <LogoutUser></LogoutUser>  </div>
+             
           </div>
         </div>
       )}

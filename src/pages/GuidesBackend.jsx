@@ -133,7 +133,7 @@ export function GuidesBackend(params) {
 
     return (
         <>
-        <div>
+        <div className='pt-16'>
         <h1 className="text-center text-2xl font-bold mb-4 mt-16">Guías Backend</h1>
         <CardsGuides itemsGuides={filteredGuides}></CardsGuides>
    </div>
