@@ -11,7 +11,7 @@ colors:{
   "dev-darkest": '#742A2A',
 },
 backgroundImage:{
-  'HeroHome':'url(public/images/HeroHome.webp)'
+  'HeroHome':'url(/public/images/HeroHome.webp)'
 }
 
     },
