@@ -37,13 +37,10 @@ const [scale, setScale] = useState(false)
              
             </div>
           </div>
-          <div    
-          
-         
-    
-      className="md:block md:w-1/2 py-4" >
-            <img src="/public/images/DESARROLLADOR.webp" alt="" />
+          <div className="md:block md:w-1/2 py-4" >
+            <img src="/images/DESARROLLADOR.webp" alt="" />
           </div> 
+
         </div>
         <div className="flex w-full justify-around pb-4">
         <div className="w-10 h-10">
