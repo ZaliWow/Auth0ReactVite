@@ -14,7 +14,7 @@ const [scale, setScale] = useState(false)
             <h1
               className="text-start bg-gradient-to-r from-pink-500 via-blue-500 to-purple-600 bg-clip-text text-4xl font-extrabold text-transparent sm:text-5xl"
             >
-              Bienvenido al blog de David
+              Bienvenido al blog de David ee
       
               <span className="sm:block"> Centro de aprendizaje</span>
             </h1>
@@ -43,6 +43,8 @@ const [scale, setScale] = useState(false)
     
       className="md:block md:w-1/2 py-4" >
             <img src="/public/images/DESARROLLADOR.webp" alt="" />
+          <div className="md:block md:w-1/2 py-4" >
+            <img src="/images/DESARROLLADOR.webp" 
           </div> 
         </div>
         <div className="flex w-full justify-around pb-4">
