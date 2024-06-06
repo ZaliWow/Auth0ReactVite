@@ -24,7 +24,7 @@ const [scale, setScale] = useState(false)
       
            
       
-            <motion.div  
+            <div  
            
             className="flex justify-start mt-8  flex-wrap  gap-4">
               <a
@@ -35,16 +35,15 @@ const [scale, setScale] = useState(false)
               </a>
       
              
-            </motion.div>
+            </div>
           </div>
-          <motion.div    
-           animate={{ scale: scale ? 2 : 1 }} 
-           onClick={()=>{setScale(!scale)}}
+          <div    
+          
          
     
       className="md:block md:w-1/2 py-4" >
             <img src="/public/images/DESARROLLADOR.webp" alt="" />
-          </motion.div> 
+          </div> 
         </div>
         <div className="flex w-full justify-around pb-4">
         <div className="w-10 h-10">
