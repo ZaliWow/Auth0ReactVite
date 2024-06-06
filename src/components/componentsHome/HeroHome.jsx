@@ -41,16 +41,7 @@ const [scale, setScale] = useState(false)
            animate={{ scale: scale ? 2 : 1 }} 
            onClick={()=>{setScale(!scale)}}
          
-      //    animate={{
-        //    scale: [1, 1.2, 1.2, 1, 1],
-         //   rotate: [0, 0, 180, 180, 0],
-         // }}
-         // transition={{
-           // duration: 2,
-            // times: [0, 0.3, 0.5, 0.8, 1],
-            // repeat: Infinity,
-  //          repeatDelay: 0
-    //      }}
+    
       className="md:block md:w-1/2 py-4" >
             <img src="/public/images/DESARROLLADOR.webp" alt="" />
           </motion.div> 
