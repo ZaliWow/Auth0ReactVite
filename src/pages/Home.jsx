@@ -5,7 +5,7 @@ import { AboutMe } from "../components/componentsHome/AboutMe"
 import { Information } from "../components/componentsHome/Information"
 import {Porpouse} from "../components/componentsHome/Porpouse"
 import { HeroHome } from "../components/componentsHome/HeroHome"
-
+import { LoadingPage } from "../components/componentsGlobal/LoadinPage"
 export function Home(params) {
     const { isAuthenticated, user, isLoading } = useAuth0()
     const [loadingUser, setLoadingUser] = useState()
@@ -13,13 +13,14 @@ export function Home(params) {
 
 
 
-    if (isLoading) return <h1>loading...</h1>
+    if (isLoading) return <LoadingPage></LoadingPage>
 
 
     if (isAuthenticated === false) return (<Login></Login>)
 
     return (
         <>
+  
         <HeroHome></HeroHome>
         <AboutMe></AboutMe>
         <Porpouse></Porpouse>

@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root{
     margin:0px;
     margin-bottom: -5rem;
@@ -11,7 +12,8 @@
 body{
     margin:0px;
     margin-bottom: -5rem;
-    padding:0px
+    padding:0px;
+    
 }
 /* Estilo para las opciones del select */
 

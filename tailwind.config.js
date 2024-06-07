@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: ["./index.html","./src/**/*.{js,jsx}"],
+  plugins: [
+    require("daisyui"),
+  ],
   theme: {
     extend: {
 colors:{
@@ -12,10 +15,11 @@ colors:{
 },
 backgroundImage:{
   'HeroHome':'url(/public/images/HeroHome.webp)'
-}
+},
+
 
     },
-  },
-  plugins: [],
+  }
+
 }
 

@@ -3,6 +3,7 @@ import { Login } from "./Login"
 import { RecommendedGuides } from '../components/componentsGuides/RecommendedGuides'
 import { CardsGuides } from '../components/componentsGuides/CardsGuides'
 import {useFilterGuides} from '../hooks/useFilterGuides'
+import { LoadingPage } from '../components/componentsGlobal/LoadinPage'
 
 
 
@@ -94,7 +95,7 @@ export function GuidesFrontend(params) {
     const filteredGuides = handleFilterGuides(guidesFrontend)
 
 
-    if (isLoading) return <h1>loading...</h1>
+    if (isLoading) return <LoadingPage></LoadingPage>
     if (isAuthenticated === false) return (<Login></Login>)
     return(
         <>
