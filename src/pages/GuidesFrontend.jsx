@@ -4,7 +4,7 @@ import { RecommendedGuides } from '../components/componentsGuides/RecommendedGui
 import { CardsGuides } from '../components/componentsGuides/CardsGuides'
 import {useFilterGuides} from '../hooks/useFilterGuides'
 import { LoadingPage } from '../components/componentsGlobal/LoadinPage'
-
+import { HeroGuides } from '../components/componentsGuides/HeroGuides'
 
 
 
@@ -91,6 +91,10 @@ export function GuidesFrontend(params) {
     }
     
     ]
+    const contentFrontend ={
+        title:"Frontend",
+        description:"Aquí podrás encontrar enlaces a multiples guías sobre frontend de distintas tecnologias y creadas por distintos educadores."
+    }
     const {handleFilterGuides } = useFilterGuides()
     const filteredGuides = handleFilterGuides(guidesFrontend)
 
@@ -99,7 +103,8 @@ export function GuidesFrontend(params) {
     if (isAuthenticated === false) return (<Login></Login>)
     return(
         <>
-   <div className='pt-16'>
+   <div >
+    <HeroGuides bgImage={'bg-HeroGuidesFrontend'} content={contentFrontend}></HeroGuides>
         <h1 className="text-center text-2xl font-bold mb-4 mt-16">Guías Backend</h1>
         <CardsGuides itemsGuides={filteredGuides}></CardsGuides>
    </div>

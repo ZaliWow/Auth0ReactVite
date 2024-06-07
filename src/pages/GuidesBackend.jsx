@@ -3,6 +3,8 @@ import { Login } from "./Login"
 import { CardsGuides } from '../components/componentsGuides/CardsGuides'
 import { useFilterGuides } from '../hooks/useFilterGuides'
 import { LoadingPage } from '../components/componentsGlobal/LoadinPage'
+import { HeroGuides } from '../components/componentsGuides/HeroGuides'
+
 
 export function GuidesBackend(params) {
  
@@ -122,6 +124,10 @@ export function GuidesBackend(params) {
 
 
     ]
+    const contentBackend = {
+        title:"Backend",
+        description:"Aquí podrás encontrar enlaces a multiples guías sobre backend de distintas tecnologias y creadas por distintos educadores."
+    }
 
     const { isAuthenticated, isLoading } = useAuth0()
     const { handleFilterGuides } = useFilterGuides()
@@ -133,7 +139,8 @@ export function GuidesBackend(params) {
 
     return (
         <>
-        <div className='pt-16'>
+        <div >
+        <HeroGuides bgImage={'bg-HeroGuidesBackend'} content={contentBackend}></HeroGuides>
         <h1 className="text-center text-2xl font-bold mb-4 mt-16">Guías Backend</h1>
         <CardsGuides itemsGuides={filteredGuides}></CardsGuides>
    </div>
