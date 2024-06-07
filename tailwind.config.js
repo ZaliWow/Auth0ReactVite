@@ -14,7 +14,9 @@ colors:{
   "dev-darkest": '#742A2A',
 },
 backgroundImage:{
-  'HeroHome':'url(/public/images/HeroHome.webp)'
+  'HeroHome':'url(/public/images/HeroHome.webp)',
+  'HeroGuidesFrontend':'url(/public/images/guiasFrontend.webp)',
+  'HeroGuidesBackend':'url(/public/images/bgBackend.webp)'
 },
 
 
