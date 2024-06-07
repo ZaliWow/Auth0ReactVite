@@ -124,7 +124,7 @@ export function GuidesBackend(params) {
 
 
     ]
-    const contentBackend = {
+    const contentBackend = { 
         title:"Backend",
         description:"Aquí podrás encontrar enlaces a multiples guías sobre backend de distintas tecnologias y creadas por distintos educadores."
     }

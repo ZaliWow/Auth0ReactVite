@@ -5,7 +5,7 @@ export function HeroHome(params) {
 
 const [scale, setScale] = useState(false)
 
-    return(
+    return( 
         <div 
         
         className="bg-HeroHome bg-cover bg-center w-screen h-full text-white">

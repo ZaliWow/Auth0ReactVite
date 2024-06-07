@@ -92,7 +92,7 @@ export function GuidesFrontend(params) {
     
     ]
     const contentFrontend ={
-        title:"Frontend",
+        title:"Frontend", 
         description:"Aquí podrás encontrar enlaces a multiples guías sobre frontend de distintas tecnologias y creadas por distintos educadores."
     }
     const {handleFilterGuides } = useFilterGuides()
