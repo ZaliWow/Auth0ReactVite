@@ -2,7 +2,7 @@ import { useAuth0 } from '@auth0/auth0-react'
 import { Login } from "./Login"
 import { CardsGuides } from '../components/componentsGuides/CardsGuides'
 import { useFilterGuides } from '../hooks/useFilterGuides'
-
+import { LoadingPage } from '../components/componentsGlobal/LoadinPage'
 
 export function GuidesBackend(params) {
  
@@ -126,7 +126,7 @@ export function GuidesBackend(params) {
     const { isAuthenticated, isLoading } = useAuth0()
     const { handleFilterGuides } = useFilterGuides()
     const filteredGuides = handleFilterGuides(guidesBackend)
-    if (isLoading) return <h1>loading...</h1>
+    if (isLoading) return <LoadingPage></LoadingPage>
 
 
     if (isAuthenticated === false) return (<Login></Login>)

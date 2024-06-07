@@ -12,6 +12,7 @@ import { FiltersStreamerProvider } from './context/filterStreamer'
 import { FilterGuidesProvider } from './context/filterGuides'
 import { ResourcesBackend } from './pages/ResourcesBackend'
 import { ResourcesFrontend } from './pages/ResourcesFrontend'
+import './index.css'
 
 
 function App() {
