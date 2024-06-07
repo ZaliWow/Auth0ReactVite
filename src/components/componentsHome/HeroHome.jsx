@@ -14,7 +14,10 @@ const [scale, setScale] = useState(false)
             <h1
               className="text-start bg-gradient-to-r from-pink-500 via-blue-500 to-purple-600 bg-clip-text text-4xl font-extrabold text-transparent sm:text-5xl"
             >
+
               Bienvenido al blog de David
+
+
               <span className="sm:block"> Centro de aprendizaje</span>
             </h1>
             <h1 className="text-2xl text-start font-semibold">
