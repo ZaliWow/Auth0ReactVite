@@ -1,3 +1,6 @@
+
+
+
 export function HeroGuides({bgImage, content}) {
     return(
         <div className={`hero min-h-screen ${bgImage}` }    >
