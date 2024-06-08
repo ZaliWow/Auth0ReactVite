@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { LogoutUser } from "./Logout";
 import { useNavigate } from "react-router-dom";
+import {motion, } from "framer-motion"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,7 +52,12 @@ export function Navbar() {
 
 
   return (
-    <nav className="bg-[rgba(255,241,242,0.8)] z-50 top-0 left-0 fixed px-4  w-full py-10">
+  
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 1 }}
+    className="bg-[rgba(255,241,242,0.8)] z-50 top-0 left-0 fixed px-4  w-full py-10">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <a href="#" className="text-gray-800 text-xl font-bold">
@@ -134,6 +140,7 @@ export function Navbar() {
           </div>
         </div>
       )}
-    </nav>
+    </motion.div>
+ 
   );
 }
