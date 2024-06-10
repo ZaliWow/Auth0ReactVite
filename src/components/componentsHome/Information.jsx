@@ -1,5 +1,14 @@
 import { useNavigate } from "react-router-dom";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
+
+
 export function Information(params) {
+
+const motionRef = useRef(null);
+const inView = useInView(motionRef, { triggerOnce: false, threshold: 0.1 });
+
 const items = [{
     title:"Guías Prácticas",
     description:"Puedes acceder a un sin fin de guías que he estado recopilando a través de mis investigaciones",
@@ -24,8 +33,7 @@ const items = [{
     navigate: "creadores"
 }
 ]
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:325156225.
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:1446681874.
+
 const navigate = useNavigate();
 const handleNavigate = (url) => {
     navigate(`/${url}`)
@@ -39,13 +47,20 @@ const handleNavigate = (url) => {
 
     {
           items.map((item) => (
-            <div key={item.title} className="flex flex-col items-center justify-center bg-white rounded-lg shadow-md p-8 w-full sm:w-1/2 lg:w-1/3">
+            <motion.div 
+            ref={motionRef}
+            initial={{ opacity: 0, x: 50 }}
+            animate={inView ? { opacity: 1, x: 0 } : {  } }
+            transition={{ duration: 0.5 }}
+            
+            
+            key={item.title} className="flex flex-col items-center justify-center bg-white rounded-lg shadow-md p-8 w-full sm:w-1/2 lg:w-1/3">
             <h3 className="text-2xl font-semibold text-gray-800 mb-4">{item.title}</h3>
             <p className="text-gray-600 text-center">{item.description}</p>
             <div className="text-center mt-8">
          <a onClick={() => handleNavigate(item.navigate)}className="bg-pink-500  hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out inline-block">{item.callaction}</a>
         </div>
-          </div>
+          </motion.div>
           )
           )}
 

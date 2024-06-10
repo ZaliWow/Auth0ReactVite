@@ -13,7 +13,7 @@ import { FilterGuidesProvider } from './context/filterGuides'
 import { ResourcesBackend } from './pages/ResourcesBackend'
 import { ResourcesFrontend } from './pages/ResourcesFrontend'
 import './index.css'
-
+import { Pruebas } from './components/pruebas'
 
 function App() {
 
